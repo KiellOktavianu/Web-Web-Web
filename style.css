@@ -1,0 +1,101 @@
+:root {
+  --bg: #eef3f1;
+  --card: #ffffff;
+  --text: #1d2b27;
+  --muted: #5f7069;
+  --line: #d5dfdb;
+  --accent: #1f6f5c;
+  --accent-hover: #175446;
+  --result-bg: #e3f1ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12201c;
+    --card: #1b2d28;
+    --text: #e6f0ec;
+    --muted: #9db3aa;
+    --line: #2c433b;
+    --accent: #4fc2a3;
+    --accent-hover: #6fd6ba;
+    --result-bg: #223a33;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.kartu {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 24px;
+}
+
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.sub { margin: 0 0 22px; color: var(--muted); font-size: .95rem; }
+
+label { display: block; margin: 14px 0 6px; font-size: .95rem; }
+
+input {
+  width: 100%;
+  padding: 11px 12px;
+  font: inherit;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+input:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.baris { display: flex; gap: 12px; }
+.baris > div { flex: 1; }
+
+button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  font: inherit;
+  font-weight: bold;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { background: var(--accent-hover); }
+
+.hasil {
+  margin-top: 22px;
+  padding: 18px;
+  background: var(--result-bg);
+  border-radius: 10px;
+}
+.hasil[hidden] { display: none; }
+.hasil .besar { font-size: 1.9rem; font-weight: bold; margin: 2px 0 12px; }
+.hasil dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  font-size: .95rem;
+}
+.hasil dt { color: var(--muted); }
+.hasil dd { margin: 0; text-align: right; }
+
+.error { margin-top: 14px; color: #c0392b; font-size: .92rem; }

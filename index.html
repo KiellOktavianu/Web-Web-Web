@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Cicilan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="kartu">
+    <h1>Kalkulator Cicilan</h1>
+    <p class="sub">Hitung cicilan bulanan dengan bunga flat.</p>
+
+    <label for="harga">Harga barang (Rp)</label>
+    <input id="harga" type="number" min="0" inputmode="numeric" placeholder="contoh: 12000000">
+
+    <label for="dp">Uang muka / DP (Rp)</label>
+    <input id="dp" type="number" min="0" inputmode="numeric" placeholder="contoh: 2000000">
+
+    <div class="baris">
+      <div>
+        <label for="bunga">Bunga per tahun (%)</label>
+        <input id="bunga" type="number" min="0" step="0.1" inputmode="decimal" placeholder="contoh: 12">
+      </div>
+      <div>
+        <label for="tenor">Tenor (bulan)</label>
+        <input id="tenor" type="number" min="1" inputmode="numeric" placeholder="contoh: 12">
+      </div>
+    </div>
+
+    <button id="hitung" type="button">Hitung cicilan</button>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <section id="hasil" class="hasil" hidden aria-live="polite">
+      <div>Cicilan per bulan</div>
+      <div class="besar" id="cicilan">-</div>
+      <dl>
+        <dt>Pokok pinjaman</dt><dd id="pokok">-</dd>
+        <dt>Total bunga</dt><dd id="totalBunga">-</dd>
+        <dt>Total pembayaran</dt><dd id="totalBayar">-</dd>
+      </dl>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
